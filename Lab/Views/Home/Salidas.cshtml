@@ -1,0 +1,29 @@
+﻿
+@model Lab.ViewModel.CitasEmpleadoViewModel
+@{
+    ViewBag.Title = "Salidas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Salidas</h2>
+<form method="post">
+<input id="Submit1" type="submit" value="Registrar Salidas" />
+</form>
+<hr/>
+<ul>
+    @foreach (var empleado in @Model.Empleados)
+    {
+        <li>
+            @empleado.ID
+            @empleado.Name
+            <ul>
+               
+             
+                    <b>hora de salida:</b> @empleado.Salida
+                
+            </ul>
+        </li>
+    }
+</ul>
+
+

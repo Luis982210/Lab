@@ -1,0 +1,22 @@
+﻿@model Lab.ViewModel.JornadasEmpleadosViewMode
+@{
+    ViewBag.Title = "Jornada";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Jornada</h2>
+<hr/>
+<u1>
+    @foreach (var empleado in @Model.Empleados)
+        
+    {
+        <li>
+            @empleado.ID-@empleado.Name
+            <br/>
+            <b>Salario:</b> Q @empleado.Salary .00
+            <br/>
+            <b>Jornada: </b> @empleado.Hours hrs
+            </li>
+    }
+ </u1>
+

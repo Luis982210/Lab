@@ -1,0 +1,36 @@
+﻿@model Lab.ViewModel.CitasEmpleadoViewModel
+@{
+    ViewBag.Title = "Empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Empleados</h2>
+<h4>Agregar empleado</h4>
+<form method="POST">
+    <label for="ID">ID empleado:</label>
+    <input name="ID" type="number" id="ID" />
+    <label for="name">Nombre empleado:</label>
+    <input name="name" type="text" id="name" />
+    <input type="submit" />
+</form>
+<hr />
+<h2>Filtrar empleado</h2>
+<form method="GET">
+    <label for="name">Nombre empleado:</label>
+    <input name="name" type="text" id="name" />
+    <label for="office">¿Esta en la oficina?: </label>
+    <input name="office" type="checkbox" value="true" id="office"/>
+    <input type="submit" />
+</form>
+<hr />
+<ul>
+    @foreach (var empleado in @Model.Empleados)
+    {
+        <li>
+            @empleado.ID
+            @empleado.Name
+            <b>horaentrada:</b> @empleado.Entrada
+
+        </li>
+    }
+</ul>

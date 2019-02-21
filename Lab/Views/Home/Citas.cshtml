@@ -1,0 +1,26 @@
+﻿@model Lab.ViewModel.CitasEmpleadoViewModel
+@{
+    ViewBag.Title = "Citas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Citas</h2>
+<form action="" method="post">
+    <input type="submit" name="upvote" value="Asignar citas" />
+</form>
+<hr />
+<ul>
+    @foreach (var empleado in @Model.Empleados)
+    {
+        <li>
+            @empleado.ID- @empleado.Name
+           
+            <ul>
+                @foreach (var cita in @empleado.Citas)
+                {
+                    <li>@cita.Client - @cita.DateTime</li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
