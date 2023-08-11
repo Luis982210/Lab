@@ -9,5 +9,6 @@ namespace Lab.Models
     {
         public DateTime DateTime { get; set; }
         public String Client { get; set; }
+        public String hola { get; set; }
     }
 }
